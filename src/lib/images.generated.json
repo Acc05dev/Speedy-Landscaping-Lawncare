@@ -1,0 +1,416 @@
+{
+  "hero": {
+    "src": "/images/landscaping-marietta-ga-mulch-river-rock-bed.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Curved bed with black mulch, river rock, topiaries and stamped red curbing installed by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "landscape-design",
+      "gallery:beds"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAAAQBACdASoQABUAPu1iqU2ppaOiMAgBMB2JQBYd5YAn79nucMXacOKa8AD+lBlqWVJExVIKxy+A9Z7hRx13Dm49nBGDXNDiimNgYOdAM0SciZuvUlOxlWoJnHBg3St+6isosLfkjnih4wDQ8GyuOZ9GOl7WvqeoBDlL9DcrMMq9sf0x8RFkd9TpSN+YX8UAOewLXlf+NK3tc2hPAAA="
+  },
+  "design-curbing": {
+    "src": "/images/landscape-design-marietta-ga-black-mulch-curbing.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Front bed with black mulch, river rock border and red stamped curbing by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "landscape-design",
+      "gallery:beds"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JYgCzgBL0aa1vjEU3OyYAAP7MVyXIKQEAsoGRln42LshE8Q/CyUl9MPM/ux/tmKRMwsGSlmLZAbm7PhVrYs+Ol/noZNm+2ZkNE/WSWV94sPMu9cRKxiLG6h6xtEIszKjnyay/0lcGJI5udI+YQm8cLJVPHfV0hDzYQRbtYAA="
+  },
+  "design-rose-path": {
+    "src": "/images/landscape-design-marietta-ga-rose-garden-path.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Backyard rose garden with a winding gravel path and fresh mulch designed by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "landscape-design",
+      "gallery:beds"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAADwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JZAC/cUAASNGxiadCegYAAP6pMBcxYVEm6aLSe/uBtcY0MDxCoN2wPUv8JXmmm4ih8NbzBpuTEpo34jODWAy1vKJTdczpP4cx9iANxUnA+NWl31FdMlJMIdlNAm/lM5/ZWF236JwAAA=="
+  },
+  "design-gravel-path": {
+    "src": "/images/gravel-garden-path-marietta-ga.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Gravel garden path with steel edging through a newly mulched planting bed by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "landscape-design",
+      "gallery:beds"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAADwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JZgCdAB0kQ6Z7srXtnAQAAPub9FqqTPBLs3e88BTctoLtW9AXewlpWvXAvuaBZr9eev5HvOePTT4DF7VoZ2FmpP9Sl/FAKPbFe9f+I4hIluaA24rvn2ECf3i4/JpzGrKHM0zWdtmMpfVYAAA="
+  },
+  "design-stone-edging": {
+    "src": "/images/flower-bed-stone-edging-marietta-ga.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "New backyard planting beds with stone block edging and brown mulch by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "landscape-design",
+      "gallery:beds"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JagCdACFweMISbfCnIlYAAP59JSZ2O0+aDe90WgxJ8t4yZmq3CEeLOgS0N+xh9iI64IF9X1FUV60uzQH4fPlIr6VT23WKSH+dAa9/bdTV3fl9MiLIULk8+Gf67v/YKucKDAAA"
+  },
+  "design-stone-edging-2": {
+    "src": "/images/backyard-planting-bed-stone-border-marietta-ga.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Curved stone border separating a mulched planting bed from the lawn by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "landscape-design",
+      "gallery:beds"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAAAwBACdASoQABUAPu1iqU2ppaOiMAgBMB2JZACdMoMnJDuy63q9Wm6jVXAA/vDfofdtC3WmS/W+mppqTKnw5RBYcgquNbUV0d+4j7PP/0yLFl2H87bul7dBlxNwiyL0Vmv0Qs6acC2f6pqmEDlLrOUo7xEGLCGQHO/Dq0UJpNQV5sDDgAA="
+  },
+  "design-white-rock": {
+    "src": "/images/white-marble-rock-landscaping-marietta-ga.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "White marble rock beds around trimmed shrubs at a front porch by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "landscape-design",
+      "gallery:rock"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAABQBACdASoQABUAPu1iqU2ppaOiMAgBMB2JZACdMoADDtYZdiiCfmTQtcVAAP29Hg6Kx5h1AcXeY8rJBCm1RUgHq7UBRLOfOY4waM0CJdfHDAAImh++FcBvmNnjr6UtUynZ52huVX7MMqC4z9W3mtb/6OkVQOCIVmMTlXvfGQ/hfvVWc0SP0vmCUVja+LhidREgAA=="
+  },
+  "design-white-rock-2": {
+    "src": "/images/decorative-rock-bed-front-yard-marietta-ga.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Front yard island bed finished in white decorative rock by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "landscape-design",
+      "gallery:rock"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAABwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JQAAJDSTz9sgwk8AA+uapLoj0dS64ZHgLZqKpxk+RGFcR/LUkuzRseHcpQbdfU+4jK/MfkuGPwJ5X++qrreGqkPhNysbN4T5K++AbIwQltiOS9qT9hyS1IzaIAA=="
+  },
+  "design-backyard": {
+    "src": "/images/backyard-landscaping-marietta-ga-sod-white-rock.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Small backyard with new sod, white rock border and black mulch beds by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "landscape-design",
+      "sod-installation",
+      "gallery:rock"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAACQAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JZgC2yArQ/t3vx9XAAOJ70cY0jOR8K1SruhedDoevP2//0H9s/33by+zZjv1tYFT4pU9TUOP+5QH/yM6d81Kd5FHuqow2alsc1lCnf6FyGPTSxVN37LB8K4pkHKCAAAA="
+  },
+  "design-stepping-stones": {
+    "src": "/images/stepping-stone-path-marietta-ga.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Stepping-stone path set in gravel across a backyard lawn by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "landscape-design",
+      "gallery:rock"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAADwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JQBdgA4U9Iz+KF2HxmSQgAP7p1dXPgh9PkGDMTYkzU1rQEkOIo7isRcaiAaqyhTcmBc3YzNdZ5oUL8w6rpnNO7DXdXx4etas0O9XAEfZS6XVCeu88lBnSigCQz0QAd2c2wucocyg2jlyAAAA="
+  },
+  "design-river-rock": {
+    "src": "/images/river-rock-bed-stone-edging-marietta-ga.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Flowering shrubs in a river rock bed with stone block edging by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "landscape-design",
+      "gallery:rock"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JYgCdABiU9mZ7rBV1DYxwAP7CIwqvkBr0h39Thyioi5O5Bg+N/gHefRM4wzDBTa1zfpDenQY0aUbsJccQAVPoAdDVNiSy5XIDBpMNfmfv2Ul5P2Odl4Dw8V0J4YUMQ6og1AAA"
+  },
+  "tree-ring": {
+    "src": "/images/tree-ring-white-rock-marietta-ga.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Flowering tree with a clean white rock ring and steel edging by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "tree-service",
+      "gallery:rock"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAADwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JZgAAYfeRwOl2CZIfODYgAP5hUY1N/an2UYjIFgx/5fSLzwNhGknPEB2E4iYXBmNlpknWFEGP+CaJxhnWcr1Xq5g5Ozw8V24XnzEdSHbN1rCaCjpDYElIK41cdEDjAvCOVNJb9Hz/MBAA"
+  },
+  "sod-side-after": {
+    "src": "/images/sod-installation-marietta-ga-side-yard-after.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Side yard after new sod installation by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "sod-installation",
+      "gallery:sod"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAACwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JZgCw7B9cB9p33LNngAD8MoEUfTu3A+vhPnuTQlo6NBpFHWUvCQLK3qP/aEaAxHQbdkUUe85/diHDVUQbWyZ9UOK4sos6VbY9TJcq6cNyPv3FJZnIcVO3RVyoryAwAAA="
+  },
+  "sod-side-before": {
+    "src": "/images/sod-installation-marietta-ga-side-yard-before.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Side yard graded to bare soil before sod installation by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "sod-installation"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAABwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JQBOgAh/6c2PDmqAA8qMilAOj9tI9xxBPxOpThvqFtWdPpHB5vzoZZqgRJxmpmJvMH/hStRcK3koWbPvHyJXLuC5AAL74fZ03roAA"
+  },
+  "sod-back-after": {
+    "src": "/images/sod-installation-marietta-ga-backyard-after.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Backyard after fresh sod was laid along a retaining wall by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "sod-installation",
+      "gallery:sod"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAABwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JbAAAXjJ0abcbgcAA/uQHfVujdZjso5RsGaJgRvQla0Hx4aj81UqpFwQjdf/MVbf4I79wviRlXXghnc4PXQ/ToDWU7pdkpjRgmW8pfSHvrJ3hxhR8Rn2CaEAAAA=="
+  },
+  "sod-back-before": {
+    "src": "/images/sod-installation-marietta-ga-backyard-before.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Backyard cleared and raked before sod installation by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "sod-installation"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAACQAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JYgCw7BRCni/WRa7AAP7QaRkF7C2/pSiaJPjYobZyEub1dMyv9FBf/1+s7kzxs1epRH+xBBMje6wNfd7t39NCFX7LQ/pYbJbRJ5c3Vlb2uZpN96PMHddEb5mlMJ+mFYAAAA=="
+  },
+  "sod-front": {
+    "src": "/images/sod-installation-marietta-ga-front-yard.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Front yard with freshly laid sod and a black mulch tree ring by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "sod-installation",
+      "gallery:sod"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAABQAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JYwC06CBWD7IiAAD2kBFJMnIrBZcRQktcF7Xp0x2D5iL7rfCBSYrtiHXp3yriOUYkux37Z3N27rpU2A+SV2YeTe13ciES+p5moC6AAAA="
+  },
+  "sod-progress": {
+    "src": "/images/sod-installation-marietta-ga-in-progress.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Sod being laid along a fence line over prepared soil by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "sod-installation",
+      "gallery:sod"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAACwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JYgCdMoADf63Z8QYaAAD+L6p4nexHkAWP0TK2FJNDcQreAgwL5E0jbznFYLQICAz+3MNBkzdbVVnldMIsAM7g0GmPNwuWDvwrWJiW3sEKEzeY3V4AAA=="
+  },
+  "sod-fence": {
+    "src": "/images/new-sod-lawn-marietta-ga-fenced-yard.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "New sod lawn in a fenced side yard by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "sod-installation",
+      "gallery:sod"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAAAQBACdASoQABUAPu1iqU2ppaOiMAgBMB2JagCsAB9PgEJ4era3Ovf/gAD3jG2sjXr58X8IIm8/lJ9/H+U21pINhXloWqhIE2okVORrKFMpkouQMHDK5vZuZToLBwaz/d5fz7J7knISts0mdo7W+RKTPufgAAAA"
+  },
+  "mulch-brown": {
+    "src": "/images/mulch-installation-marietta-ga-brown-mulch-bed.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Foundation bed refreshed with brown mulch around trimmed shrubs and hostas by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "mulch-pine-straw",
+      "gallery:mulch"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAADQAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JZAC7ABZb0BSBz2IobHAA/ropK/zhmhVxsGfo9Z6y35i2aQvvB1FfVbME6byTUoUEdnSFqSoSUGpgaGeyuKo6uqv2jCG4ngeQfAVOp+2XtVqmh7yfc6gyWm83v4qA7duDwGbAAAA="
+  },
+  "mulch-shrubs": {
+    "src": "/images/mulch-installation-marietta-ga-shrub-bed.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Fresh brown mulch around rounded shrubs at a front porch by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "mulch-pine-straw",
+      "gallery:mulch"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAAAQBACdASoQABUAPu1iqU2ppaOiMAgBMB2JYgAAXdE7cxRAE9tQj4feAAD+zMaRpuKNL47x9VY+Nj8ZXq8sMrK86eoSsf9Trn+sBszGXa9P51UkPry8sL94IU7I1I4W//KsJqWcJvDKwWeihdsEQG9+AByRDiKnH/Zt8UWV9hu0/ft/sOf+gAAA"
+  },
+  "mulch-red": {
+    "src": "/images/red-mulch-installation-marietta-ga.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Red mulch bed with scalloped edging beside a new sod lawn by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "mulch-pine-straw",
+      "gallery:mulch"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADQAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JYwC2yB0jvjyE0N/FrYAA+SfFI7CLzDRhVWKsLccJ4ecUMZwBc6bsL82Q8g/LGlRdMz3xJnBLMjQLXIzBJNI1VzFzBdfiJNQHtvNAAAA="
+  },
+  "mulch-black": {
+    "src": "/images/black-mulch-flower-bed-marietta-ga.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "New flower bed with black mulch and granite block edging by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "mulch-pine-straw",
+      "gallery:mulch"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAACwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JQBOgA41cinVl1QyLQAD+YUnhHlzHP0KgRSNc1lA+UWGTGaBPhoC5F9YZ72EiNenC8Uq0bVVVYBTaol6rya4h6Tadv/v2Nl+G+ztOwkjPQWevmT8yeSc5UJ0tXgAA"
+  },
+  "mulch-large": {
+    "src": "/images/mulch-delivery-and-spreading-marietta-ga.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Large area covered in fresh brown mulch beside a home by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "mulch-pine-straw",
+      "gallery:mulch"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAACwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JQBfnBH35czSfazdKsADyaN2TxACCscZVB7n2/BW30uznZ3Ng61G9kuA2cc22w9BAcW9Rc3MSwci9kBXoROW1kcqbNflIFIb5Pvnq/0GsqMRtEA7ddV+SKnuLVkgAAAA="
+  },
+  "lawn-front": {
+    "src": "/images/lawn-maintenance-marietta-ga-front-yard.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Freshly mowed front lawn with flower bed and curved walkway maintained by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "lawn-maintenance",
+      "gallery:lawn"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAAAQBACdASoQABUAPu1iqU2ppaOiMAgBMB2JZgC7AB61UfVkR9L1Lz2TAAD+6/8fozX+thMcPaafPlhkpjDIbi50gAb8G30NyN96klxVuVGS4zaauLCJw/t/zHbITbIDpuawkbQmpdlj5nwq+kLz/SNYsCF6blP7McS+8ZAA"
+  },
+  "lawn-porch": {
+    "src": "/images/lawn-care-marietta-ga-front-lawn-porch.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Thick green front lawn and trimmed hedges at a home with a covered porch, maintained by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "lawn-maintenance",
+      "gallery:lawn"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAAAQBACdASoQABUAPu1iqU2ppaOiMAgBMB2JZgCdAYwm2Ir4ym07WUIBlAD+kW4OP6JNtkFs9Idsry5fw5a/NcVGeAquKDtDQaAJ73OVJ0o5hdmtzNHWtvd8P60yxWctReJI+LUR/N1zV33cZ15RLntrMVo0Yd6hO9AAAA=="
+  },
+  "lawn-curb": {
+    "src": "/images/lawn-mowing-marietta-ga-curbside.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Evenly cut lawn and edged sidewalk strip by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "lawn-maintenance",
+      "gallery:lawn"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAACQAwCdASoQABUAPu1iqU2ppaQiMAgBMB2JQAAK+eBwiHGhzNQAAP7N4o+tS2QjESZoHcp0OjaSY6i7nJS/52tzKhmt9b8Xr9BGKiaLKO+9/9+1jLPocVDVTwLBBvyod9MFo85TzPNdGV/Bltp8AAAA"
+  },
+  "lawn-trees": {
+    "src": "/images/tree-service-marietta-ga-shaded-lawn.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Shaded lawn with mature trees at a wooded lot cared for by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "tree-service",
+      "lawn-maintenance",
+      "gallery:lawn"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAACwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JYgAAO46XfLGhub0y0AD+28qjakV/4nV3k5ExWD7R7aX7nuE4WUJK7vtkxOtC3TiFasDPzYX+j1GqWRw6L/euNupNkFUJXnchE7wkTPkdXpA22nz5tML6tmgAAA=="
+  },
+  "hedge-trim": {
+    "src": "/images/hedge-trimming-marietta-ga.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Hedges trimmed square above a white rock bed by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "lawn-maintenance",
+      "tree-service",
+      "gallery:lawn"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAADQAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JZQC7ABQOJ5vHbrPyDgAA/t0wTBNfvFuqwT2fPDNhlUP76TXe4z4vWX5WxW/2vw9/xsimOjsNj757iW94hlK1Jg8BnEez35ft8iayuMkh1EoCdwKg8bqHjZtF/qK7gAA="
+  },
+  "wash-driveway": {
+    "src": "/images/pressure-washing-marietta-ga-driveway.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Concrete driveway being pressure washed, with the cleaned section visibly brighter, by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "pressure-washing",
+      "gallery:washing"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAADwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JQBYdhBz2YyNBjIyTh1BgAP3jU2750fRqizvjVEDongpfLUSZARN7Ai0IGQx3ObYfFkV9fsIPCBgNL1huqmUJ7ftqMLy8wQdqv9uZy1C1C4qK5iCVhSngiJG7DP25LWJ1GfL1tLk74AAA"
+  },
+  "wash-walkway": {
+    "src": "/images/pressure-washing-marietta-ga-walkway.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Front walkway during pressure washing by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "pressure-washing",
+      "gallery:washing"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAADwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JQBadA/BFLTRyQWnJGnmAAN0EdjawQSvjmSYW9rFZtCe/rBSOTYPHR+moJVJqM9O5C8BLIb4o742myQUU6Kh2CEtveLYYEsBM99EV0nBRELeeLgA="
+  },
+  "wash-clean": {
+    "src": "/images/clean-concrete-driveway-marietta-ga.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Bright, clean concrete driveway at a brick home after pressure washing by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "pressure-washing",
+      "gallery:washing"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAADwAwCdASoQABUAPu1iqU2ppaQiMAgBMB2JYgDCh3gAVXGbcnS1q08wAP66aw1IZgOSN6MwVwVaWtirPxhQXk03C54X9xu/M96SCA6VwTqIa+tcXjqbdq0v7qMbeftRFeVqP9KevPaCTT0ZBpsG/XJfTTDFsz+fr8Qt3F7cAAA="
+  },
+  "wash-drive-bed": {
+    "src": "/images/driveway-cleaning-marietta-ga.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Clean driveway and freshly edged bed beside a garage by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "pressure-washing"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JQBOgAP+aeA50AOI8t2o4B27JcwZdw3p5AFDE/TKTsejsrn220gtez2FyizZi2Qwrs5rO1zJpALQuvR4c4KeEKRFKOOnpL4AAAA=="
+  },
+  "gutter-home": {
+    "src": "/images/gutter-cleaning-marietta-ga-home-exterior.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Brick and stone home with gutters and downspout above a red mulch bed, serviced by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "gutter-cleaning"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAAAwBACdASoQABUAPu1iqU2ppaOiMAgBMB2JZACdAB9fVMBinvqLIcvSBAAA/rptnqp7FPslxqQbxA4mVBUivQE4kKS/XcPz75xjPNSSt0naSwueXxyYbb2BHBy8QsaDfR+z/kmAp8TPEA8oW6en3+LuqYNhaFULhoBJRxjpbNeK2YpqNTtJeNQA"
+  },
+  "cleanup-before": {
+    "src": "/images/yard-cleanup-marietta-ga-before.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Overgrown bed cleared down to bare soil at a brick home by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "yard-cleanup"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAADQAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JYgCdABorRyoM5FIfd+AA/qammj8ECmF4odm6YX5oCzS64JzbjKpZDVXiqlEbWVacJf33Qztlg0XKVoKqPDQLwN/2+5j3O3dXhpOC525aTwo0A1OTVlvpLMMumvHCvt0Yl5TLAAA="
+  },
+  "cleanup-after": {
+    "src": "/images/yard-cleanup-marietta-ga-after.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "The same bed after cleanup, with black mulch, new plants and stone edging by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "yard-cleanup",
+      "gallery:beds"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAACwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JQAAK+ONixbLh9e4mSAD94cJuyHosbI6TVc1ncu0+pcHSm/9xFIVJ/AxgSf4eT3pL++YFNDOKvd7J1vciVV/ECXsR7zqHtaktN6vrf/Bru/PAAAA="
+  },
+  "cleanup-corner": {
+    "src": "/images/backyard-cleanup-marietta-ga.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Backyard corner cleared of old growth and debris by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "yard-cleanup"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAAAwBACdASoQABUAPu1iqU2ppaOiMAgBMB2JYgC7MoABzksac9TmegG/QhgA/uUcLSk+Q8z/CbQ3FCj2ZUAPdTm0MG36L3sxsg3zaE3yPiZQ5ZyBbIhtdSmrm15Wt6mDoNew4xjhOU1jy7MP5ipCDBxVXrHs/sT44bJEr+KsCCq5kHesnAA="
+  },
+  "cleanup-grading": {
+    "src": "/images/yard-clearing-and-grading-marietta-ga.webp",
+    "width": 1400,
+    "height": 1867,
+    "alt": "Front yard cleared and graded to bare soil by Speedy Landscaping & Lawncare, Marietta, GA",
+    "tags": [
+      "yard-cleanup"
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAAAwBACdASoQABUAPu1iqU2ppaOiMAgBMB2JQAAL3dt/FwvspBJildZBrQAA/rsxmUcJp60og4m/6ZTAKKJs7GfOdoingVCzqjrad1K+Q6g5uOnIhfNqQaN97+uy1113aIJHOX5/9AuCC2ThHEC6af4jWHceBEP9/d0naa/pa3fcnQXXe4ygLmOQAAA="
+  }
+}

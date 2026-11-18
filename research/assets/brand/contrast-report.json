@@ -1,0 +1,162 @@
+[
+  {
+    "fg": "ink.900",
+    "bg": "neutral.50",
+    "use": "Body text on page background",
+    "min": 4.5,
+    "fgHex": "#060E15",
+    "bgHex": "#F5F7F2",
+    "ratio": 18,
+    "pass": true
+  },
+  {
+    "fg": "ink.900",
+    "bg": "neutral.0",
+    "use": "Body text on cards",
+    "min": 4.5,
+    "fgHex": "#060E15",
+    "bgHex": "#FFFFFF",
+    "ratio": 19.42,
+    "pass": true
+  },
+  {
+    "fg": "ink.500",
+    "bg": "neutral.50",
+    "use": "Muted text on page background",
+    "min": 4.5,
+    "fgHex": "#51615A",
+    "bgHex": "#F5F7F2",
+    "ratio": 6.07,
+    "pass": true
+  },
+  {
+    "fg": "ink.500",
+    "bg": "neutral.100",
+    "use": "Muted text on alternate sections",
+    "min": 4.5,
+    "fgHex": "#51615A",
+    "bgHex": "#E9EEE6",
+    "ratio": 5.56,
+    "pass": true
+  },
+  {
+    "fg": "green.700",
+    "bg": "neutral.50",
+    "use": "Links and small green text",
+    "min": 4.5,
+    "fgHex": "#0E7A17",
+    "bgHex": "#F5F7F2",
+    "ratio": 5.1,
+    "pass": true
+  },
+  {
+    "fg": "green.700",
+    "bg": "neutral.100",
+    "use": "Links on alternate sections",
+    "min": 4.5,
+    "fgHex": "#0E7A17",
+    "bgHex": "#E9EEE6",
+    "ratio": 4.68,
+    "pass": true
+  },
+  {
+    "fg": "neutral.0",
+    "bg": "green.700",
+    "use": "Primary button label",
+    "min": 4.5,
+    "fgHex": "#FFFFFF",
+    "bgHex": "#0E7A17",
+    "ratio": 5.5,
+    "pass": true
+  },
+  {
+    "fg": "neutral.0",
+    "bg": "green.800",
+    "use": "Primary button label, hover",
+    "min": 4.5,
+    "fgHex": "#FFFFFF",
+    "bgHex": "#0B5C13",
+    "ratio": 8.22,
+    "pass": true
+  },
+  {
+    "fg": "ink.900",
+    "bg": "yellow.400",
+    "use": "Call button label",
+    "min": 4.5,
+    "fgHex": "#060E15",
+    "bgHex": "#F2CC21",
+    "ratio": 12.42,
+    "pass": true
+  },
+  {
+    "fg": "ink.900",
+    "bg": "yellow.500",
+    "use": "Call button label, hover",
+    "min": 4.5,
+    "fgHex": "#060E15",
+    "bgHex": "#DDB70F",
+    "ratio": 10.04,
+    "pass": true
+  },
+  {
+    "fg": "neutral.0",
+    "bg": "green.900",
+    "use": "Text on dark sections",
+    "min": 4.5,
+    "fgHex": "#FFFFFF",
+    "bgHex": "#0A3D14",
+    "ratio": 12.42,
+    "pass": true
+  },
+  {
+    "fg": "green.400",
+    "bg": "green.900",
+    "use": "Highlights on dark sections",
+    "min": 4.5,
+    "fgHex": "#8EEA15",
+    "bgHex": "#0A3D14",
+    "ratio": 8.24,
+    "pass": true
+  },
+  {
+    "fg": "yellow.400",
+    "bg": "green.900",
+    "use": "Phone number on dark sections",
+    "min": 4.5,
+    "fgHex": "#F2CC21",
+    "bgHex": "#0A3D14",
+    "ratio": 7.95,
+    "pass": true
+  },
+  {
+    "fg": "neutral.300",
+    "bg": "green.900",
+    "use": "Secondary text on dark sections",
+    "min": 4.5,
+    "fgHex": "#D2D8DB",
+    "bgHex": "#0A3D14",
+    "ratio": 8.63,
+    "pass": true
+  },
+  {
+    "fg": "green.600",
+    "bg": "neutral.50",
+    "use": "Large headings and icons in brand green",
+    "min": 3,
+    "fgHex": "#12931A",
+    "bgHex": "#F5F7F2",
+    "ratio": 3.73,
+    "pass": true
+  },
+  {
+    "fg": "neutral.0",
+    "bg": "green.600",
+    "use": "Large text on brand green",
+    "min": 3,
+    "fgHex": "#FFFFFF",
+    "bgHex": "#12931A",
+    "ratio": 4.03,
+    "pass": true
+  }
+]
