@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: "Landscaping and lawn care in Marietta, GA.",
     start_url: "/",
     display: "standalone",
-    background_color: "#f5f7f2",
-    theme_color: "#0a3d14",
+    background_color: "#fbf9f4",
+    theme_color: "#fbf9f4",
     icons: [
       { src: "/brand/icon-192.png", sizes: "192x192", type: "image/png" },
       { src: "/brand/icon-512.png", sizes: "512x512", type: "image/png" },

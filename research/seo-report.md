@@ -89,35 +89,36 @@ Salida de `npm run audit`:
 | Redirecciones 301 | Preparadas para las 4 URLs de la web antigua (solo aplican si se reutiliza `speedyyards.com`) |
 | Imágenes | `next/image` con AVIF y WebP, tamaños adaptados, carga diferida y marcador borroso |
 | Imagen principal | Precargada con prioridad alta |
-| Fuentes | `next/font`. La de titulares pesa 11 KB |
-| GSAP y Lenis | Carga diferida: con la primera interacción o tras terminar la carga |
+| Fuentes | `next/font` (Manrope e Instrument Serif), alojadas junto a la web. La serif no se precarga |
+| GSAP y Lenis | En un trozo de JavaScript aparte que no bloquea el primer pintado. Si tarda o falla, la página se muestra sin animar |
 | `prefers-reduced-motion` | Respetado: sin animaciones ni scroll suave |
 | Móvil | Diseño mobile-first, con barra fija de llamada |
 | Consola | Sin errores |
 
 ## 5. Lighthouse
 
-Lighthouse en modo incógnito sin extensiones, sobre `localhost`.
+Medición del 19-11-2026, tras el rediseño, con Lighthouse sobre la versión de producción en `localhost` (`npm run build` y `npm run start`).
 
 | Página | Dispositivo | Rendimiento | Accesibilidad | Buenas prácticas | SEO |
 |---|---|---|---|---|---|
-| `/` | Móvil | 93 | 100 | 100 | 100 |
-| `/` | Escritorio | 100 | 100 | 100 | 100 |
-| `/services/sod-installation` | Móvil | 95 | 100 | 100 | 100 |
+| `/` | Móvil | 92 | 100 | 100 | 100 |
+| `/` | Escritorio | 99 | 100 | 100 | 100 |
+| `/services/sod-installation` | Móvil | 93 | 100 | 100 | 100 |
 
 | Página | Dispositivo | FCP | LCP | TBT | CLS |
 |---|---|---|---|---|---|
-| `/` | Móvil | 0,9 s | 3,3 s | 40 ms | 0 |
-| `/` | Escritorio | 0,3 s | 0,7 s | 0 ms | 0 |
-| `/services/sod-installation` | Móvil | 0,9 s | 3,0 s | 40 ms | 0 |
+| `/` | Móvil | 1,1 s | 3,4 s | 20 ms | 0 |
+| `/` | Escritorio | 0,3 s | 0,9 s | 0 ms | 0 |
+| `/services/sod-installation` | Móvil | 0,9 s | 3,2 s | 10 ms | 0 |
 
 Lectura de los resultados:
 
-- **El objetivo de más de 90 en las cuatro categorías se cumple** en las tres mediciones.
+- **El objetivo de 90 o más en las cuatro categorías se cumple** en las tres mediciones. En móvil el margen de rendimiento es corto (92 y 93) y Lighthouse varía unos puntos entre pasadas.
 - **CLS por debajo de 0,1:** cumplido (0).
-- **LCP por debajo de 2,5 s:** cumplido en escritorio (0,7 s). En móvil Lighthouse da 3,0 a 3,3 s, que es una estimación con red 4G lenta y procesador cuatro veces más lento. Sin esa simulación, el LCP medido fue de 0,5 s.
-- **INP por debajo de 200 ms:** no se puede medir en laboratorio, necesita visitas reales. El indicador equivalente, el tiempo de bloqueo (TBT), es de 40 ms.
-- Los informes completos están en `research/lighthouse/`.
+- **LCP por debajo de 2,5 s:** cumplido en escritorio (0,9 s). En móvil Lighthouse da 3,2 a 3,4 s, que es una estimación con red 4G lenta y procesador cuatro veces más lento. Sin esa simulación, el LCP medido fue de 0,2 s.
+- **INP por debajo de 200 ms:** no se puede medir en laboratorio, necesita visitas reales. El indicador equivalente, el tiempo de bloqueo (TBT), es de 20 ms.
+- Los informes completos (JSON) están en `research/lighthouse/`.
+- **Aviso sobre la medición local.** En el equipo donde se midió, un programa de seguridad descomprime las respuestas HTTP cuando el agente de usuario es un navegador. Lighthouse veía entonces la página sin gzip y daba 71 en móvil. Las cifras de arriba se tomaron con `--emulated-user-agent="SpeedyLocalAudit/1.0"`, que evita esa interferencia y deja la compresión como la servirá el alojamiento real.
 
 Hay que repetir la medición con PageSpeed Insights sobre el dominio real: el resultado cambia con el alojamiento.
 

@@ -22,7 +22,7 @@ const c = ref => ref.split('.').reduce((o, k) => o[k], tokens.color).hex;
 const INK = c('ink.900'), SHIELD = c('ink.700'), WHITE = c('neutral.0'), SILVER = c('neutral.300');
 const G400 = c('green.400'), G500 = c('green.500'), G600 = c('green.600'), G700 = c('green.700');
 const G900 = c('green.900'), G950 = c('green.950'), YELLOW = c('yellow.400');
-const MARBLE = c('neutral.50'), MIST = c('neutral.100'), SLATE = c('ink.500');
+const MARBLE = c('neutral.50'), SLATE = c('ink.500');
 const SOD = '#59D81F'; // lighter stripe green, taken from the logo extraction
 
 const fonts = {

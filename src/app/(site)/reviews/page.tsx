@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { business } from "@/lib/business";
 import { reviews } from "@/lib/reviews";
 import { pageMetadata } from "@/lib/seo";
-import { CtaBand } from "@/components/Cta";
-import { PageHero } from "@/components/PageHero";
-import { ReviewCard } from "@/components/ReviewCard";
-import { Stars } from "@/components/Stars";
-import { ArrowIcon } from "@/components/icons";
+import { CtaBand } from "@/components/sections/CtaBand";
+import { PageHero } from "@/components/sections/PageHero";
+import { ReviewCard } from "@/components/ui/ReviewCard";
+import { Stars } from "@/components/ui/Stars";
+import { ArrowIcon } from "@/components/ui/icons";
 
 export const metadata: Metadata = pageMetadata({
   title: "Speedy Landscaping Reviews | Marietta, GA",
@@ -26,12 +26,12 @@ export default function ReviewsPage() {
         intro={`${business.name} has ${reviewCount} reviews on Google with an average of ${rating.toFixed(1)} out of 5. These are our customers' own words, copied exactly as they wrote them.`}
         cta={false}
       >
-        <div className="hero-rise mt-9 flex flex-col gap-5 [--i:1] sm:flex-row sm:items-center">
+        <div className="mt-10 flex flex-col gap-6 sm:flex-row sm:items-center" data-hero="">
           <div className="flex items-center gap-4">
-            <span className="display tabular text-6xl">{rating.toFixed(1)}</span>
+            <span className="tabular text-7xl leading-none font-semibold tracking-[-0.055em]">{rating.toFixed(1)}</span>
             <span className="flex flex-col gap-1">
               <Stars size={22} />
-              <span className="text-slate">{reviewCount} Google reviews</span>
+              <span className="text-stone">{reviewCount} Google reviews</span>
             </span>
           </div>
           <a href={reviewUrl ?? profileUrl} target="_blank" rel="noopener" className="btn btn-primary sm:ml-4">
@@ -50,7 +50,7 @@ export default function ReviewsPage() {
               </div>
             ))}
           </div>
-          <p className="mt-8 max-w-2xl text-[0.95rem] text-slate">
+          <p className="mt-8 max-w-2xl text-[0.94rem] text-stone">
             Reviews were left on our Google Business Profile and are shown with the reviewer&apos;s first name and
             last initial. Some longer reviews are shown as excerpts.{" "}
             <a href={profileUrl} target="_blank" rel="noopener" className="link">

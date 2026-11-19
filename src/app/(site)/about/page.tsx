@@ -5,11 +5,11 @@ import { business, nap } from "@/lib/business";
 import { reviewById } from "@/lib/reviews";
 import { pageMetadata } from "@/lib/seo";
 import { services } from "@/lib/services";
-import { CtaBand } from "@/components/Cta";
-import { PageHero } from "@/components/PageHero";
-import { PhotoFrame } from "@/components/Photo";
-import { ReviewCard } from "@/components/ReviewCard";
-import { CheckIcon } from "@/components/icons";
+import { CtaBand } from "@/components/sections/CtaBand";
+import { PageHero } from "@/components/sections/PageHero";
+import { PhotoFrame } from "@/components/ui/Photo";
+import { ReviewCard } from "@/components/ui/ReviewCard";
+import { CheckIcon } from "@/components/ui/icons";
 
 export const metadata: Metadata = pageMetadata({
   title: "About Speedy Landscaping & Lawncare | Marietta, GA",
@@ -50,10 +50,10 @@ export default function AboutPage() {
         <div className="container-page grid gap-14 lg:grid-cols-[1.1fr_0.9fr]">
           <article className="flex flex-col gap-12">
             <section>
-              <h2 className="display text-[clamp(1.6rem,2.7vw,2.3rem)]" data-reveal="">
+              <h2 className="display h-title" data-reveal="">
                 Who you are dealing with
               </h2>
-              <div className="prose-speedy mt-5 text-shield" data-reveal="">
+              <div className="prose-speedy mt-5 text-charcoal" data-reveal="">
                 <p>
                   Speedy is not a franchise or a call center. The number on our yard signs reads “
                   {business.owner.firstName}: {business.phone.display}”, and that is exactly who picks up.{" "}
@@ -68,10 +68,10 @@ export default function AboutPage() {
             </section>
 
             <section>
-              <h2 className="display text-[clamp(1.6rem,2.7vw,2.3rem)]" data-reveal="">
+              <h2 className="display h-title" data-reveal="">
                 What we do
               </h2>
-              <div className="prose-speedy mt-5 text-shield" data-reveal="">
+              <div className="prose-speedy mt-5 text-charcoal" data-reveal="">
                 <p>
                   We look after the whole outside of a home: {services.map((s) => s.shortName.toLowerCase()).slice(0, -1).join(", ")} and{" "}
                   {services[services.length - 1].shortName.toLowerCase()}. Many customers start with one job and keep
@@ -80,7 +80,7 @@ export default function AboutPage() {
                 <ul className="flex flex-col gap-3">
                   {services.map((s) => (
                     <li key={s.slug} className="flex gap-3">
-                      <CheckIcon className="mt-1 shrink-0 text-turf" />
+                      <CheckIcon className="mt-1 shrink-0 text-brand" />
                       <span>
                         <Link href={`/services/${s.slug}`} className="link">
                           {s.name}
@@ -94,10 +94,10 @@ export default function AboutPage() {
             </section>
 
             <section>
-              <h2 className="display text-[clamp(1.6rem,2.7vw,2.3rem)]" data-reveal="">
+              <h2 className="display h-title" data-reveal="">
                 What our neighbors say
               </h2>
-              <div className="prose-speedy mt-5 text-shield" data-reveal="">
+              <div className="prose-speedy mt-5 text-charcoal" data-reveal="">
                 <p>
                   Customers have left {business.google.reviewCount} five-star reviews on Google, and neighbors voted
                   Speedy a Nextdoor Neighborhood Favorite in 2025. The words that come up again and again are fast, on
@@ -115,13 +115,13 @@ export default function AboutPage() {
           </article>
 
           <aside className="flex flex-col gap-6 lg:sticky lg:top-28 lg:self-start">
-            <div className="rounded-3xl border border-silver bg-white p-7" data-reveal="">
+            <div className="card p-7" data-reveal="">
               <h2 className="h-sub">{nap.name} at a glance</h2>
               <dl className="mt-5 flex flex-col">
                 {facts.map((f) => (
-                  <div key={f.label + f.value} className="grid grid-cols-[8.5rem_1fr] gap-3 border-b border-silver py-3 last:border-0">
+                  <div key={f.label + f.value} className="grid grid-cols-[8.5rem_1fr] gap-3 border-b border-line py-3 last:border-0">
                     <dt className="font-bold">{f.label}</dt>
-                    <dd className="text-slate">{f.value}</dd>
+                    <dd className="text-stone">{f.value}</dd>
                   </div>
                 ))}
               </dl>

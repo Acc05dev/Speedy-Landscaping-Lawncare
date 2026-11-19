@@ -1,6 +1,6 @@
 # Speedy Landscaping & Lawncare: web
 
-Web del negocio Speedy Landscaping & Lawncare (Marietta, Georgia). Next.js 16 (App Router), TypeScript, Tailwind CSS 4, GSAP + ScrollTrigger y Lenis. Todo el contenido se genera de forma estática y está pensado para SEO local y para que los asistentes de IA puedan citar el negocio.
+Web del negocio Speedy Landscaping & Lawncare (Marietta, Georgia). Next.js 16 (App Router), TypeScript, Tailwind CSS 4, GSAP (ScrollTrigger y SplitText, con `@gsap/react`) y Lenis. Todo el contenido se genera de forma estática y está pensado para SEO local y para que los asistentes de IA puedan citar el negocio.
 
 El contenido de la web está en inglés (negocio de EE. UU.). Esta guía está en español.
 
@@ -68,7 +68,11 @@ Mientras la variable no esté definida, el formulario muestra un aviso para que 
 | Reseñas | `src/lib/reviews.ts` |
 | Preguntas frecuentes de la portada | `src/lib/faqs.ts` |
 | Fotos, nombres de archivo y textos alternativos | `scripts/optimize-images.mjs` |
-| Colores y tipografías | `src/app/globals.css` |
+| Colores, tamaños de letra, espaciados y radios (design tokens) | `src/app/globals.css`, bloque `@theme` |
+| Tipografías | `src/app/layout.tsx` |
+| Orden de las secciones de la portada | `src/app/(site)/page.tsx` |
+| Pasos de "From first call to finished yard" | `src/components/sections/Process.tsx` |
+| Fotos de la galería horizontal de la portada | `src/components/sections/WorkRail.tsx` |
 
 Las páginas, el sitemap, los datos estructurados y `/llms.txt` se generan a partir de esos archivos. Añadir un servicio o una ciudad es añadir un elemento a la lista correspondiente.
 
@@ -120,33 +124,40 @@ Ningún dato de la web es inventado. Lo que no se pudo confirmar está en `src/l
 
 - La web usa `public/brand/logo-horizontal.svg` (cabecera), `logo-horizontal-light.svg` (pie) y `logo-badge.svg` (página `/links`).
 - El logo original del cliente, con el fondo quitado, está en `public/brand/logo-original.webp`.
-- Para usar el original en la cabecera, cambia el `src` en `src/components/Logo.tsx`. Hazlo solo si el cliente asume el riesgo descrito arriba.
-- Favicons e imagen Open Graph se regeneran con `npm run brand`.
+- Para usar el original en la cabecera, cambia el `src` en `src/components/ui/Logo.tsx`. Hazlo solo si el cliente asume el riesgo descrito arriba.
+- Los favicons se regeneran con `npm run brand`.
+- **Imagen para redes** (`src/app/opengraph-image.jpg` y `twitter-image.jpg`). La actual sigue el diseño nuevo: fondo claro, Manrope y botón verde con el teléfono. Se compuso aparte, a 1200 × 630 px, con las fuentes y los colores de la propia web. Ojo: `npm run brand` la sustituiría por la tarjeta del diseño anterior (verde oscuro, tipografía Archivo), que es la que genera `research/scripts/build-brand-assets.cjs`.
+
+## Diseño
+
+Estética clara y pausada, con mucho espacio en blanco y titulares grandes. Todo sale de los tokens del bloque `@theme` de `src/app/globals.css`:
+
+- **Color.** Los tonos se derivan del logo. Fondos cálidos (`bone`, `cream`, `sand`), verdes suavizados (`mint`, `sage`, `moss`), texto en verde muy oscuro (`forest`, `charcoal`, `stone`) y el verde intenso de la marca (`brand`) solo en botones, enlaces y detalles. El amarillo del logo queda para las estrellas. Todos los pares de texto y fondo que se usan pasan WCAG AA.
+- **Fondos de sección.** Cada sección declara su color con `data-bg="mint"` (o `bone`, `cream`, `sand`, `sage`). Con las animaciones activas el color se funde de una sección a la siguiente.
+- **Un solo bloque oscuro:** el pie, con una fila de césped que crece en su borde superior.
 
 ## Fuentes
 
-- **Archivo** (titulares), en su corte expandido de peso 800. Licencia SIL Open Font License. Está alojada en `src/fonts` como subconjunto latino en WOFF2 (11 KB por archivo).
-- **Figtree** (texto y subtítulos), cargada con `next/font/google`.
+Las dos se cargan con `next/font/google`, que las aloja junto a la web (el navegador no pide nada a Google):
 
-Para regenerar los archivos de Archivo a partir de los TTF de `research/assets/fonts`:
-
-```bash
-pip install fonttools brotli
-python -m fontTools.subset research/assets/fonts/Archivo-Expanded-ExtraBold.ttf --unicodes="U+0020-007E,U+00A0-00FF,U+2013,U+2014,U+2018,U+2019,U+201C,U+201D,U+2026,U+2122,U+20AC" --layout-features="kern,liga,tnum,lnum" --flavor=woff2 --output-file=src/fonts/Archivo-Expanded-ExtraBold.woff2
-```
+- **Manrope** (peso variable): titulares y texto.
+- **Instrument Serif** en cursiva: solo para las palabras de los clientes (citas y reseñas). No se precarga porque nunca aparece en la primera pantalla.
 
 ## Estructura
 
 ```
-src/app/(site)/        Páginas con cabecera y pie: portada, services, areas, about, gallery, reviews, contact
-src/app/(bare)/links/  Página de enlaces para redes sociales, sin cabecera ni pie
-src/app/               layout, 404, sitemap, robots, manifest, llms.txt, api/contact, iconos
-src/components/        Componentes de interfaz
-src/animations/        Animaciones de scroll (GSAP), aisladas y reutilizables
-src/lib/               Datos del negocio, servicios, ciudades, reseñas, SEO y datos estructurados
-scripts/               Optimización de fotos, assets de marca, auditoría SEO
-research/              Investigación, assets de marca e informe SEO
-Img/                   Fotos y vídeos originales del cliente (no se suben al repositorio)
+src/app/(site)/           Páginas con cabecera y pie: portada, services, areas, about, gallery, reviews, contact
+src/app/(bare)/links/     Página de enlaces para redes sociales, sin cabecera ni pie
+src/app/                  layout, 404, sitemap, robots, manifest, llms.txt, api/contact, iconos
+src/components/sections/  Secciones completas de página (Hero, Process, WorkRail, PageHero, CtaBand...)
+src/components/ui/        Piezas reutilizables (Photo, BeforeAfter, ServiceIndex, ReviewCard, ContactForm, iconos...)
+src/components/layout/    Cabecera, pie y barra de llamada del móvil
+src/components/motion/    Arranque de las animaciones: script inicial y componente que carga GSAP y Lenis
+src/lib/animations/       Las animaciones, una por archivo (hero, reveals, story, rail, background...)
+src/lib/                  Datos del negocio, servicios, ciudades, reseñas, SEO y datos estructurados
+scripts/                  Optimización de fotos, assets de marca, auditoría SEO
+research/                 Investigación, assets de marca e informe SEO
+Img/                      Fotos y vídeos originales del cliente (no se suben al repositorio)
 ```
 
 ### Qué no se sube al repositorio
@@ -167,5 +178,9 @@ Conviene guardar una copia de esos archivos en otro sitio. Para subir alguno, qu
 ## Notas técnicas
 
 - **Generación estática clásica.** `cacheComponents` está desactivado a propósito: así las rutas dinámicas declaran `dynamicParams = false` y una URL de servicio o ciudad inexistente devuelve un 404 real.
-- **Animaciones.** El texto siempre está en el HTML. Las animaciones solo cambian `opacity`, `transform` y `clip-path`. GSAP y Lenis se cargan con la primera interacción del visitante o poco después de terminar la carga, y no se cargan si el visitante prefiere movimiento reducido.
+- **Animaciones.** El texto siempre está en el HTML del servidor; las páginas son Server Components y activan cada animación con un atributo (`data-reveal`, `data-split`, `data-counter`, `data-story`, `data-rail`, `data-bg`...). La lista completa está en los comentarios de `src/lib/animations`. Solo se animan `opacity` y `transform`; la excepción es `clip-path`, en el barrido de las fotos y en el comparador antes/después.
+- **Carga de las animaciones.** GSAP, ScrollTrigger, SplitText y Lenis van en un trozo de JavaScript aparte que se descarga en paralelo con la página (`src/components/motion`). `useGSAP` se encarga de limpiar todo al cambiar de página.
+- **Si el JavaScript tarda o falla.** Un script mínimo marca `<html class="anim">` antes del primer pintado para que nada parpadee. Si las animaciones no han llegado a los 1,8 s se muestra la cabecera sin esperar, y a los 6 s se muestra toda la página sin animar. Sin JavaScript la página es HTML estático completo.
+- **Secciones fijas.** "From first call to finished yard" y la galería horizontal se quedan fijas con `position: sticky` (CSS), no con el pin de ScrollTrigger, así que el alto de la página es estable desde el primer pintado. Solo se activan en pantallas de al menos 1024 × 680 px; en móvil los pasos se apilan y la galería se desliza con el dedo.
+- **Movimiento reducido.** Quien tiene activada esa preferencia no recibe la clase `anim`: ve la página estática, sin Lenis ni animaciones de scroll.
 - **Esta versión de Next.js tiene cambios respecto a las anteriores.** Antes de tocar el código conviene leer `AGENTS.md` y la documentación incluida en `node_modules/next/dist/docs`.

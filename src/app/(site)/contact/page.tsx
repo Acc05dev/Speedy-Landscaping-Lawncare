@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { business, nap } from "@/lib/business";
 import { pageMetadata } from "@/lib/seo";
-import { ContactForm } from "@/components/ContactForm";
-import { MapEmbed } from "@/components/MapEmbed";
-import { PageHero } from "@/components/PageHero";
-import { MessageIcon, PhoneIcon } from "@/components/icons";
+import { services } from "@/lib/services";
+import { ContactForm } from "@/components/ui/ContactForm";
+import { MapEmbed } from "@/components/ui/MapEmbed";
+import { PageHero } from "@/components/sections/PageHero";
+import { MessageIcon, PhoneIcon } from "@/components/ui/icons";
 
 export const metadata: Metadata = pageMetadata({
   title: "Free Landscaping Estimate in Marietta, GA | Speedy",
@@ -26,40 +27,40 @@ export default function ContactPage() {
       <section className="section pt-0">
         <div className="container-page grid gap-14 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <h2 className="display text-[clamp(1.6rem,2.7vw,2.3rem)]">Tell us about the job</h2>
-            <p className="mt-3 mb-8 max-w-xl text-slate">
+            <h2 className="display h-title" data-reveal="">
+              Tell us about the job
+            </h2>
+            <p className="mt-3 mb-8 max-w-xl text-stone" data-reveal="">
               The more detail you give, the closer the first estimate will be.
             </p>
-            <ContactForm />
+            <div data-reveal="">
+              <ContactForm services={services.map((s) => s.name)} />
+            </div>
           </div>
 
-          <div className="flex flex-col gap-6">
-            <a
-              href={business.phone.href}
-              className="flex flex-col gap-1 rounded-3xl bg-sun p-8 text-ink transition-colors hover:bg-sun-dark"
-            >
-              <span className="flex items-center gap-2 font-semibold">
-                <PhoneIcon />
+          <div className="flex flex-col gap-5" data-reveal="">
+            <a href={business.phone.href} className="group flex flex-col gap-2 rounded-card bg-sage-200 p-8 text-forest">
+              <span className="flex items-center gap-2 font-bold text-charcoal">
+                <PhoneIcon size={18} />
                 Call {business.owner.firstName}
               </span>
-              <span className="display tabular text-[clamp(2rem,3.6vw,3rem)]">{business.phone.display}</span>
+              <span className="tabular text-[clamp(2.1rem,3.8vw,3.4rem)] leading-none font-semibold tracking-[-0.045em] transition-colors duration-300 group-hover:text-brand-deep">
+                {business.phone.display}
+              </span>
             </a>
-            <a
-              href={business.phone.sms}
-              className="flex items-center justify-between gap-4 rounded-3xl border border-silver bg-white p-6 font-semibold transition-colors hover:border-turf"
-            >
+            <a href={business.phone.sms} className="card card-hover flex items-center justify-between gap-4 p-6 font-bold">
               <span className="flex items-center gap-3">
-                <MessageIcon className="text-turf" />
+                <MessageIcon className="text-brand" />
                 Text photos of your yard
               </span>
-              <span className="text-turf">{business.phone.display}</span>
+              <span className="text-brand">{business.phone.display}</span>
             </a>
 
-            <div className="rounded-3xl border border-silver bg-white p-7">
+            <div className="card p-7">
               <h2 className="h-sub">Where we are</h2>
               {/* NAP: keep identical to the Google Business Profile. */}
-              <address className="mt-3 not-italic text-slate">
-                <span className="block font-bold text-ink">{nap.name}</span>
+              <address className="mt-3 not-italic text-stone">
+                <span className="block font-bold text-forest">{nap.name}</span>
                 {business.address.street ? <span className="block">{business.address.street}</span> : null}
                 <span className="block">{nap.cityLine}</span>
                 <a href={business.phone.href} className="link mt-2 inline-block">
@@ -74,7 +75,7 @@ export default function ContactPage() {
               {business.hours ? (
                 <>
                   <h3 className="mt-5 font-bold">Hours</h3>
-                  <ul className="mt-1 text-slate">
+                  <ul className="mt-1 text-stone">
                     {business.hours.map((h) => (
                       <li key={h.days.join()}>
                         {h.days.length > 1 ? `${h.days[0]} to ${h.days[h.days.length - 1]}` : h.days[0]}: {h.opens} to {h.closes}
