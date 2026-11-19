@@ -7,14 +7,14 @@ import { featuredReviews, reviewsForService } from "@/lib/reviews";
 import { faqSchema, serviceSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 import { relatedServices, serviceBySlug, services } from "@/lib/services";
-import { CtaBand } from "@/components/Cta";
-import { FaqList } from "@/components/FaqList";
-import { JsonLd } from "@/components/JsonLd";
-import { PageHero } from "@/components/PageHero";
-import { PhotoFrame } from "@/components/Photo";
-import { ReviewCard } from "@/components/ReviewCard";
-import { ServiceCard } from "@/components/ServiceCard";
-import { CheckIcon } from "@/components/icons";
+import { CtaBand } from "@/components/sections/CtaBand";
+import { FaqList } from "@/components/ui/FaqList";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { PageHero } from "@/components/sections/PageHero";
+import { PhotoFrame } from "@/components/ui/Photo";
+import { ReviewCard } from "@/components/ui/ReviewCard";
+import { ServiceCard } from "@/components/ui/ServiceCard";
+import { CheckIcon } from "@/components/ui/icons";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -67,20 +67,20 @@ export default async function ServicePage({ params }: Props) {
           <article className="flex flex-col gap-14">
             {service.sections.map((section) => (
               <section key={section.heading}>
-                <h2 className="display text-[clamp(1.6rem,2.7vw,2.3rem)]" data-reveal="">
+                <h2 className="display h-title" data-reveal="">
                   {section.heading}
                 </h2>
-                <div className="prose-speedy mt-5 text-shield" data-reveal="">
+                <div className="prose-speedy mt-5 text-charcoal" data-reveal="">
                   {section.lead ? <p>{section.lead}</p> : null}
                   {section.steps ? (
                     <ol className="flex flex-col gap-5">
                       {section.steps.map((step, i) => (
                         <li key={step.title} className="flex gap-4">
-                          <span className="display tabular grid size-10 shrink-0 place-items-center rounded-full bg-turf text-base text-white">
+                          <span className="tabular grid size-10 shrink-0 place-items-center rounded-full bg-brand text-base font-bold text-white">
                             {i + 1}
                           </span>
                           <p>
-                            <strong className="text-ink">{step.title}.</strong> {step.text}
+                            <strong className="text-forest">{step.title}.</strong> {step.text}
                           </p>
                         </li>
                       ))}
@@ -90,7 +90,7 @@ export default async function ServicePage({ params }: Props) {
                     <ul className="flex flex-col gap-3">
                       {section.bullets.map((b) => (
                         <li key={b} className="flex gap-3">
-                          <CheckIcon className="mt-1 shrink-0 text-turf" />
+                          <CheckIcon className="mt-1 shrink-0 text-brand" />
                           <span>{b}</span>
                         </li>
                       ))}
@@ -106,10 +106,10 @@ export default async function ServicePage({ params }: Props) {
             {service.gallery.slice(0, 2).map((key, i) => (
               <PhotoFrame key={key} name={key} sizes="(min-width: 1024px) 34vw, 92vw" aspect={i === 0 ? "aspect-[4/5]" : "aspect-[5/4]"} />
             ))}
-            <div className="rounded-3xl bg-sun p-7 text-ink lg:sticky lg:top-28">
+            <div className="rounded-card bg-sage-200 p-7 text-forest lg:sticky lg:top-28">
               <h2 className="h-sub">Free estimate for {service.shortName.toLowerCase()}</h2>
               <p className="mt-2">Call or text {business.owner.firstName}. Photos of the yard help us answer faster.</p>
-              <a href={business.phone.href} className="display tabular mt-4 block text-3xl hover:underline">
+              <a href={business.phone.href} className="tabular mt-4 block text-[2rem] leading-none font-semibold tracking-[-0.04em] transition-colors duration-300 hover:text-brand-deep">
                 {business.phone.display}
               </a>
               <Link href="/contact" className="btn btn-primary mt-5 w-full">
@@ -135,9 +135,9 @@ export default async function ServicePage({ params }: Props) {
         </section>
       ) : null}
 
-      <section className="section bg-mist">
+      <section data-bg="cream" className="section">
         <div className="container-page">
-          <h2 className="display h-section" data-reveal="">
+          <h2 className="display h-section" data-split="">
             {specific.length ? `What customers say about our ${service.shortName.toLowerCase()}` : "What customers say about Speedy"}
           </h2>
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
@@ -154,10 +154,10 @@ export default async function ServicePage({ params }: Props) {
       <section className="section">
         <div className="container-page grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <h2 className="display h-section" data-reveal="">
+            <h2 className="display h-section" data-split="">
               {service.shortName}: common questions
             </h2>
-            <p className="mt-6 max-w-md text-slate" data-reveal="">
+            <p className="mt-6 max-w-md text-stone" data-reveal="">
               {service.name} is available in Marietta and nearby{" "}
               {areas.map((a, i) => (
                 <span key={a.slug}>
@@ -174,9 +174,9 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="section bg-mist">
+      <section data-bg="cream" className="section">
         <div className="container-page">
-          <h2 className="display h-section" data-reveal="">
+          <h2 className="display h-section" data-split="">
             Often booked together
           </h2>
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

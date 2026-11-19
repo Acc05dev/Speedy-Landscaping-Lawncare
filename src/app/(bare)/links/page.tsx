@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { business } from "@/lib/business";
 import { pageMetadata } from "@/lib/seo";
-import { Stars } from "@/components/Stars";
-import { ArrowIcon, MessageIcon, PhoneIcon } from "@/components/icons";
+import { Stars } from "@/components/ui/Stars";
+import { ArrowIcon, MessageIcon, PhoneIcon } from "@/components/ui/icons";
 
 // A link-in-bio page for social profiles. Kept out of the index: it repeats what the main pages say.
 export const metadata: Metadata = pageMetadata({
@@ -31,9 +31,8 @@ const secondary: LinkItem[] = [
 
 export default function LinksPage() {
   return (
-    <main className="on-dark stripes-dark relative min-h-dvh bg-pine text-white">
-      <div aria-hidden className="stripes h-2.5 w-full" />
-      <div className="mx-auto flex w-full max-w-md flex-col items-center px-5 pt-12 pb-16 text-center">
+    <main data-hero-root="" className="mown relative min-h-dvh bg-mint">
+      <div className="mx-auto flex w-full max-w-md flex-col items-center px-5 pt-14 pb-16 text-center">
         <Image
           src="/brand/logo-badge.svg"
           alt={business.name}
@@ -41,37 +40,41 @@ export default function LinksPage() {
           height={780}
           unoptimized
           preload
-          className="hero-settle h-auto w-44"
+          className="settle h-auto w-40"
         />
-        <h1 className="display mt-6 text-3xl">{business.name}</h1>
-        <p className="hero-rise mt-3 text-silver">Landscaping and lawn care in Marietta, GA</p>
-        <p className="hero-rise mt-3 flex items-center gap-2 text-[0.95rem] text-silver [--i:1]">
+        <h1 className="display h-title mt-7" data-hero-title="">
+          {business.name}
+        </h1>
+        <p className="mt-3 text-charcoal" data-hero="">
+          Landscaping and lawn care in Marietta, GA
+        </p>
+        <p className="mt-3 flex items-center gap-2 text-[0.94rem] font-bold" data-hero="">
           <Stars size={16} />
           {business.google.rating.toFixed(1)} from {business.google.reviewCount} Google reviews
         </p>
 
         <ul className="mt-9 flex w-full flex-col gap-3">
-          <li className="hero-rise [--i:2]">
-            <a href={business.phone.href} className="btn btn-call w-full">
-              <PhoneIcon />
+          <li data-hero="">
+            <a href={business.phone.href} className="btn btn-primary w-full">
+              <PhoneIcon size={18} />
               Call {business.phone.display}
             </a>
           </li>
-          <li className="hero-rise [--i:3]">
-            <a href={business.phone.sms} className="btn w-full bg-white text-ink hover:bg-mist">
-              <MessageIcon />
+          <li data-hero="">
+            <a href={business.phone.sms} className="btn btn-soft w-full">
+              <MessageIcon size={18} />
               Text us photos of your yard
             </a>
           </li>
-          {secondary.map((item, i) => (
-            <li key={item.label} className="hero-rise" style={{ "--i": i + 4 } as React.CSSProperties}>
+          {secondary.map((item) => (
+            <li key={item.label} data-hero="">
               {item.external ? (
-                <a href={item.href} target="_blank" rel="noopener" className="btn btn-outline w-full justify-between">
+                <a href={item.href} target="_blank" rel="noopener" className="btn btn-soft w-full justify-between">
                   {item.label}
                   <ArrowIcon />
                 </a>
               ) : (
-                <Link href={item.href} className="btn btn-outline w-full justify-between">
+                <Link href={item.href} className="btn btn-soft w-full justify-between">
                   {item.label}
                   <ArrowIcon />
                 </Link>
@@ -80,7 +83,7 @@ export default function LinksPage() {
           ))}
         </ul>
 
-        <address className="mt-10 text-[0.95rem] not-italic text-silver">
+        <address className="mt-10 text-[0.94rem] text-charcoal not-italic" data-hero="">
           {business.name}
           <br />
           {business.address.city}, {business.address.region} {business.address.postalCode}

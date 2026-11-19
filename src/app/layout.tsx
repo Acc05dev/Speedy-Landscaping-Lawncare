@@ -1,43 +1,28 @@
 import type { Metadata, Viewport } from "next";
-import { Figtree } from "next/font/google";
-import localFont from "next/font/local";
+import { Instrument_Serif, Manrope } from "next/font/google";
 import "./globals.css";
 import { business } from "@/lib/business";
 import { localBusinessSchema, webSiteSchema } from "@/lib/schema";
 import { OG_IMAGE } from "@/lib/seo";
-import { AnimationProvider, animationBootScript } from "@/components/AnimationProvider";
-import { JsonLd } from "@/components/JsonLd";
+import { MotionRoot } from "@/components/motion/MotionRoot";
+import { motionBootScript } from "@/components/motion/boot";
+import { JsonLd } from "@/components/ui/JsonLd";
 
-/*
- * Display: Archivo, expanded width, weight 800 (Google Fonts, SIL Open Font License).
- * Self-hosted as a Latin subset of that single cut: 11 KB instead of the 90 KB variable file.
- * To rebuild the files, see "Fonts" in the README.
- */
-const archivo = localFont({
-  src: "../fonts/Archivo-Expanded-ExtraBold.woff2",
-  weight: "800",
-  style: "normal",
+// Headings and text: Manrope (variable weight), self-hosted by next/font.
+const manrope = Manrope({
+  subsets: ["latin"],
   display: "swap",
-  variable: "--font-archivo",
-  fallback: ["Arial Black", "Arial", "sans-serif"],
+  variable: "--font-manrope",
 });
 
-// The italic is only used for a few large quotes, so it is not preloaded.
-const archivoItalic = localFont({
-  src: "../fonts/Archivo-Expanded-ExtraBoldItalic.woff2",
-  weight: "800",
+// Customers' words only (quotes and reviews). Never above the fold, so it is not preloaded.
+const instrument = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
   style: "italic",
   display: "swap",
   preload: false,
-  variable: "--font-archivo-italic",
-  fallback: ["Arial Black", "Arial", "sans-serif"],
-});
-
-// Body and sub-headings: Figtree (variable weight).
-const figtree = Figtree({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-figtree",
+  variable: "--font-instrument",
 });
 
 const title = "Landscaping in Marietta, GA | Speedy Landscaping";
@@ -69,23 +54,23 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a3d14",
+  themeColor: "#fbf9f4",
   colorScheme: "light",
   width: "device-width",
   initialScale: 1,
 };
 
 /**
- * Root layout: fonts, the animation bootstrap and the sitewide structured data.
+ * Root layout: fonts, the motion bootstrap and the sitewide structured data.
  * The header and footer live in (site)/layout.tsx so that /links can render without them.
  */
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${archivo.variable} ${archivoItalic.variable} ${figtree.variable} antialiased`} suppressHydrationWarning>
+    <html lang="en" className={`${manrope.variable} ${instrument.variable} antialiased`} suppressHydrationWarning>
       <body className="min-h-dvh overflow-x-clip">
-        <script dangerouslySetInnerHTML={{ __html: animationBootScript }} />
+        <script dangerouslySetInnerHTML={{ __html: motionBootScript }} />
         {children}
-        <AnimationProvider />
+        <MotionRoot />
         <JsonLd data={[localBusinessSchema(), webSiteSchema()]} />
       </body>
     </html>

@@ -1,67 +1,122 @@
 @import "tailwindcss";
 
 /*
- * Brand tokens. Colours come from the logo (see research/assets/brand/tokens.json)
- * and every text/background pair used below passes WCAG AA.
+ * Design tokens.
+ *
+ * Colour: everything is derived from the logo (research/assets/brand/palette-extracted.json).
+ * The soft greens keep the logo's hue with most of the saturation taken out, the neutrals are
+ * warm, and the logo's own green is kept for actions and small accents only.
+ * Every text/background pair used on the site passes WCAG AA.
+ *
+ * Tailwind 4 reads tokens from `@theme`, so each one below is also a utility:
+ * `bg-mint`, `text-stone`, `rounded-card`, `py-band`, `text-section`, `ease-soft`...
  */
 @theme inline {
-  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* The serif is reserved for customers' own words: quotes and reviews. */
+  --font-serif: var(--font-instrument), "Iowan Old Style", "Palatino Linotype", Georgia, serif;
 }
 
 @theme {
+  /* Warm neutrals */
+  --color-bone: #fbf9f4;
+  --color-cream: #f5f1e6;
+  --color-sand: #ece5d3;
+  --color-line: #e2ded0;
+
+  /* Soft greens */
+  --color-mint: #e8f2e4;
+  --color-sage-200: #d5e3d0;
+  --color-sage-400: #a9c0a4;
+  --color-moss-500: #7e9a78;
+  --color-moss-700: #48644a;
+
+  /* Text. Never pure black. */
+  --color-forest: #14261a;
+  --color-forest-950: #0d1b12;
+  --color-charcoal: #33403a;
+  --color-stone: #55625a;
+
+  /* Brand at full strength: actions and small accents only */
+  --color-brand: #0e7a17;
+  --color-brand-deep: #0b5c13;
+  --color-leaf: #12931a;
   --color-lime: #8eea15;
-  --color-sod: #36b91e;
-  --color-sod-light: #59d81f;
-  --color-brand: #12931a;
-  --color-turf: #0e7a17;
-  --color-hedge: #0b5c13;
-  --color-pine: #0a3d14;
-  --color-pine-deep: #06270d;
   --color-sun: #f2cc21;
-  --color-sun-dark: #ddb70f;
-  --color-ink: #060e15;
-  --color-shield: #28352d;
-  --color-slate: #51615a;
-  --color-marble: #f5f7f2;
-  --color-mist: #e9eee6;
-  --color-silver: #d2d8db;
+  --color-butter: #f7ecc0;
 
-  --shadow-soft: 0 1px 2px rgb(10 61 20 / 0.06), 0 12px 32px -12px rgb(10 61 20 / 0.18);
-  --shadow-lift: 0 2px 4px rgb(10 61 20 / 0.08), 0 28px 56px -20px rgb(10 61 20 / 0.32);
+  /* Type scale (fluid). Sizes carry their own leading and tracking. */
+  --text-hero: clamp(2.75rem, 7.5vw, 7.5rem);
+  --text-hero--line-height: 0.98;
+  --text-hero--letter-spacing: -0.045em;
+  --text-page: clamp(2.5rem, 5.2vw, 4.75rem);
+  --text-page--line-height: 1;
+  --text-page--letter-spacing: -0.04em;
+  --text-section: clamp(2rem, 4.1vw, 3.75rem);
+  --text-section--line-height: 1.04;
+  --text-section--letter-spacing: -0.036em;
+  --text-title: clamp(1.5rem, 2.5vw, 2.25rem);
+  --text-title--line-height: 1.12;
+  --text-title--letter-spacing: -0.03em;
+  --text-sub: clamp(1.15rem, 1.4vw, 1.3rem);
+  --text-sub--line-height: 1.25;
+  --text-sub--letter-spacing: -0.018em;
+  --text-lead: clamp(1.125rem, 1.45vw, 1.35rem);
+  --text-lead--line-height: 1.5;
+  --text-quote: clamp(3rem, 10.4vw, 10rem);
+  --text-quote--line-height: 0.98;
+  --text-quote--letter-spacing: -0.02em;
 
-  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Spacing */
+  --spacing-gutter: clamp(1.25rem, 4vw, 3rem);
+  /* Vertical padding of a section. Not called "section": that would make Tailwind emit an `h-section`
+     height utility, which is the name of the section heading class. */
+  --spacing-band: clamp(5rem, 11vw, 10.5rem);
+
+  /* Radii */
+  --radius-field: 0.875rem;
+  --radius-tile: 1.125rem;
+  --radius-card: 1.5rem;
+  --radius-frame: clamp(1.5rem, 2.4vw, 2.25rem);
+
+  /* Shadows: green-tinted and very soft */
+  --shadow-soft: 0 1px 2px rgb(20 38 26 / 0.04), 0 18px 40px -22px rgb(20 38 26 / 0.2);
+  --shadow-lift: 0 2px 4px rgb(20 38 26 / 0.05), 0 36px 64px -28px rgb(20 38 26 / 0.3);
+
+  /* Motion */
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-swift: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;
-    scroll-padding-top: 6rem;
+    scroll-padding-top: 5.5rem;
   }
 
   body {
-    background: var(--color-marble);
-    color: var(--color-ink);
+    background: var(--color-bone);
+    color: var(--color-forest);
     font-family: var(--font-sans);
     font-size: 1.0625rem;
-    line-height: 1.6;
+    line-height: 1.65;
     text-rendering: optimizeLegibility;
   }
 
   ::selection {
-    background: var(--color-sun);
-    color: var(--color-ink);
+    background: var(--color-sage-400);
+    color: var(--color-forest-950);
   }
 
   :focus-visible {
-    outline: 3px solid var(--color-turf);
+    outline: 2px solid var(--color-brand);
     outline-offset: 3px;
     border-radius: 6px;
   }
 
   .on-dark :focus-visible,
   .on-dark:focus-visible {
-    outline-color: var(--color-sun);
+    outline-color: var(--color-lime);
   }
 
   summary {
@@ -74,101 +129,158 @@
 }
 
 @layer components {
+  /* ---------- Layout ---------- */
   .container-page {
     width: 100%;
-    max-width: 78rem;
+    max-width: 84rem;
     margin-inline: auto;
-    padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+    padding-inline: var(--spacing-gutter);
   }
 
   .section {
-    padding-block: clamp(4.5rem, 9vw, 8.5rem);
+    position: relative;
+    padding-block: var(--spacing-band);
   }
 
-  /* Display type: Archivo Expanded ExtraBold. The wide, heavy letters echo the logo lettering. */
+  /*
+   * Section backgrounds. A section names its colour with data-bg. When the motion runtime is
+   * live (`html.bg-live`) the sections turn transparent and a fixed stage behind the page
+   * crossfades between the same colours, so the change is animated with opacity only.
+   */
+  [data-bg="bone"] {
+    background-color: var(--color-bone);
+  }
+  [data-bg="cream"] {
+    background-color: var(--color-cream);
+  }
+  [data-bg="sand"] {
+    background-color: var(--color-sand);
+  }
+  [data-bg="mint"] {
+    background-color: var(--color-mint);
+  }
+  [data-bg="sage"] {
+    background-color: var(--color-sage-200);
+  }
+
+  html.bg-live main > [data-bg] {
+    background-color: transparent;
+  }
+
+  .bg-stage {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: var(--color-bone);
+  }
+
+  .bg-stage > div {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    will-change: opacity;
+  }
+
+  /* Mowing stripes, barely there. The one texture on the site. */
+  .mown {
+    isolation: isolate;
+  }
+
+  .mown::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(100deg, rgb(255 255 255 / 0.2) 0 72px, transparent 72px 144px);
+    /* Fades in and out at the section edges, so the stripes never end on a hard line. */
+    mask-image: linear-gradient(to bottom, transparent, #000 min(22%, 24rem), #000 calc(100% - min(22%, 24rem)), transparent);
+  }
+
+  /* ---------- Type ---------- */
   .display {
-    font-family: var(--font-display);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 0.98;
+    font-weight: 600;
     text-wrap: balance;
   }
 
-  .display-italic {
-    font-family: var(--font-archivo-italic), var(--font-display);
-    font-style: italic;
-  }
-
   .h-hero {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-size: var(--text-hero);
+    line-height: var(--text-hero--line-height);
+    letter-spacing: var(--text-hero--letter-spacing);
   }
 
   .h-page {
-    font-size: clamp(2.2rem, 4.8vw, 4.1rem);
+    font-size: var(--text-page);
+    line-height: var(--text-page--line-height);
+    letter-spacing: var(--text-page--letter-spacing);
   }
 
   .h-section {
-    font-size: clamp(1.9rem, 3.7vw, 3.2rem);
+    font-size: var(--text-section);
+    line-height: var(--text-section--line-height);
+    letter-spacing: var(--text-section--letter-spacing);
   }
 
-  /* Sub-headings use the body face at its heaviest, so the display face stays special. */
+  .h-title {
+    font-size: var(--text-title);
+    line-height: var(--text-title--line-height);
+    letter-spacing: var(--text-title--letter-spacing);
+  }
+
   .h-sub {
-    font-family: var(--font-sans);
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    line-height: 1.18;
-    font-size: clamp(1.2rem, 1.6vw, 1.4rem);
+    font-weight: 700;
+    font-size: var(--text-sub);
+    line-height: var(--text-sub--line-height);
+    letter-spacing: var(--text-sub--letter-spacing);
   }
 
   .lead {
-    font-size: clamp(1.1rem, 1.45vw, 1.3rem);
-    line-height: 1.55;
-    max-width: 38rem;
+    font-size: var(--text-lead);
+    line-height: var(--text-lead--line-height);
+    max-width: 36rem;
+  }
+
+  /* A customer's words. */
+  .quote {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.012em;
+    line-height: 1.16;
   }
 
   .prose-speedy {
-    max-width: 42rem;
+    max-width: 40rem;
   }
 
   .prose-speedy > * + * {
     margin-top: 1.1em;
   }
 
-  /* Mowing stripes: the one recurring brand motif. */
-  .stripes {
-    background-image: repeating-linear-gradient(
-      100deg,
-      var(--color-sod) 0 26px,
-      var(--color-sod-light) 26px 52px
-    );
+  .tabular {
+    font-variant-numeric: tabular-nums;
   }
 
-  .stripes-dark {
-    background-image: repeating-linear-gradient(
-      100deg,
-      rgb(255 255 255 / 0.035) 0 40px,
-      transparent 40px 80px
-    );
-  }
-
-  /* Buttons */
+  /* ---------- Buttons ---------- */
   .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.6rem;
     min-height: 3.25rem;
-    padding: 0.85rem 1.6rem;
+    padding: 0.8rem 1.55rem;
     border-radius: 999px;
     font-weight: 700;
-    font-size: 1.02rem;
+    font-size: 1rem;
     line-height: 1.1;
+    letter-spacing: -0.005em;
     white-space: nowrap;
     transition:
-      transform 0.25s var(--ease-out-quint),
-      background-color 0.2s ease,
-      box-shadow 0.25s ease,
-      color 0.2s ease;
+      transform 0.45s var(--ease-soft),
+      background-color 0.25s ease,
+      box-shadow 0.45s var(--ease-soft),
+      color 0.25s ease;
   }
 
   .btn:hover {
@@ -176,88 +288,87 @@
   }
 
   .btn:active {
-    transform: translateY(0) scale(0.98);
+    transform: translateY(0) scale(0.975);
+    transition-duration: 0.12s;
   }
 
   .btn svg {
     flex: none;
-    transition: transform 0.3s var(--ease-out-quint);
+    transition: transform 0.45s var(--ease-soft);
   }
 
-  .btn-call {
-    background: var(--color-sun);
-    color: var(--color-ink);
-    box-shadow: 0 10px 24px -12px rgb(221 183 15 / 0.9);
-  }
-
-  .btn-call:hover {
-    background: var(--color-sun-dark);
-  }
-
-  .btn-call:hover svg {
-    transform: rotate(-14deg) scale(1.08);
-  }
-
-  .btn-primary {
-    background: var(--color-turf);
-    color: #fff;
-    box-shadow: 0 10px 24px -14px rgb(11 92 19 / 0.9);
-  }
-
-  .btn-primary:hover {
-    background: var(--color-hedge);
-  }
-
-  .btn-primary:hover svg,
-  .btn-outline:hover svg {
+  .btn:hover .icon-arrow {
     transform: translateX(4px);
   }
 
-  .btn-outline {
-    border: 1.5px solid rgb(6 14 21 / 0.18);
-    color: var(--color-ink);
-    background: transparent;
+  .btn:hover .icon-phone {
+    transform: rotate(-12deg) scale(1.06);
   }
 
-  .btn-outline:hover {
-    border-color: var(--color-ink);
-    background: #fff;
-  }
-
-  .on-dark .btn-outline {
-    border-color: rgb(255 255 255 / 0.3);
+  .btn-primary {
+    background: var(--color-brand);
     color: #fff;
+    box-shadow: 0 14px 28px -16px rgb(14 122 23 / 0.8);
   }
 
-  .on-dark .btn-outline:hover {
-    border-color: #fff;
+  .btn-primary:hover {
+    background: var(--color-brand-deep);
+    box-shadow: 0 20px 34px -16px rgb(11 92 19 / 0.75);
+  }
+
+  .btn-soft {
+    background: #fff;
+    color: var(--color-forest);
+    box-shadow: inset 0 0 0 1px var(--color-line);
+  }
+
+  .btn-soft:hover {
+    box-shadow:
+      inset 0 0 0 1px var(--color-sage-400),
+      var(--shadow-soft);
+  }
+
+  .on-dark .btn-soft {
+    background: transparent;
+    color: #fff;
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.28);
+  }
+
+  .on-dark .btn-soft:hover {
     background: rgb(255 255 255 / 0.08);
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.7);
   }
 
   .btn-sm {
     min-height: 2.75rem;
-    padding: 0.6rem 1.15rem;
-    font-size: 0.95rem;
+    padding: 0.55rem 1.15rem;
+    font-size: 0.94rem;
   }
 
-  /* Text links with an underline that draws in */
+  /* Text links: the underline retracts on hover. */
   .link {
     font-weight: 700;
-    color: var(--color-turf);
+    color: var(--color-brand);
     background-image: linear-gradient(currentColor, currentColor);
-    background-size: 100% 2px;
+    background-size: 100% 1.5px;
     background-position: 0 100%;
     background-repeat: no-repeat;
     padding-bottom: 2px;
     transition:
       color 0.2s ease,
-      background-size 0.3s var(--ease-out-quint);
+      background-size 0.4s var(--ease-soft);
   }
 
   .link:hover {
-    color: var(--color-hedge);
-    background-size: 0% 2px;
+    color: var(--color-brand-deep);
+    background-size: 0% 1.5px;
     background-position: 100% 100%;
+  }
+
+  /* The darker section colours need the deeper green to keep AA contrast. */
+  [data-bg="sand"] .link,
+  [data-bg="sage"] .link {
+    color: var(--color-brand-deep);
   }
 
   .on-dark .link {
@@ -268,16 +379,16 @@
     color: #fff;
   }
 
-  /* Image frames */
+  /* ---------- Surfaces ---------- */
   .frame {
     position: relative;
     overflow: hidden;
-    border-radius: 1.5rem;
-    background: var(--color-mist);
+    border-radius: var(--radius-frame);
+    background: var(--color-sage-200);
   }
 
   .frame img {
-    transition: transform 0.9s var(--ease-out-quint);
+    transition: transform 1.1s var(--ease-soft);
   }
 
   a:hover > .frame img,
@@ -285,38 +396,77 @@
     transform: scale(1.045);
   }
 
-  /* Form fields */
+  .card {
+    border-radius: var(--radius-card);
+    background: #fff;
+    box-shadow: inset 0 0 0 1px var(--color-line);
+  }
+
+  .card-hover {
+    transition:
+      transform 0.5s var(--ease-soft),
+      box-shadow 0.5s var(--ease-soft);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      inset 0 0 0 1px var(--color-sage-400),
+      var(--shadow-soft);
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    background: var(--color-mint);
+    color: var(--color-brand-deep);
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  /* ---------- Forms ---------- */
   .field {
     width: 100%;
     min-height: 3.25rem;
     padding: 0.8rem 1rem;
-    border-radius: 0.85rem;
-    border: 1.5px solid var(--color-silver);
-    background: #fff;
-    color: var(--color-ink);
+    border-radius: var(--radius-field);
+    border: 1px solid var(--color-line);
+    background: var(--color-bone);
+    color: var(--color-forest);
     font: inherit;
     transition:
       border-color 0.2s ease,
-      box-shadow 0.2s ease;
+      background-color 0.2s ease,
+      box-shadow 0.25s ease;
   }
 
   .field::placeholder {
-    color: #7b8a84;
+    color: #76827b;
   }
 
   .field:hover {
-    border-color: #aab4b0;
+    border-color: var(--color-sage-400);
   }
 
   .field:focus {
     outline: none;
-    border-color: var(--color-turf);
-    box-shadow: 0 0 0 4px rgb(14 122 23 / 0.16);
+    background: #fff;
+    border-color: var(--color-brand);
+    box-shadow: 0 0 0 4px rgb(14 122 23 / 0.14);
   }
 
-  /* FAQ */
+  /* ---------- FAQ ---------- */
   .faq-item {
-    border-bottom: 1px solid var(--color-silver);
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  [data-bg="cream"] .faq-item,
+  [data-bg="cream"] .faq-list {
+    border-color: #ddd7c5;
   }
 
   .faq-item summary {
@@ -324,124 +474,274 @@
     align-items: flex-start;
     justify-content: space-between;
     gap: 1.5rem;
-    padding-block: 1.35rem;
+    padding-block: 1.5rem;
     list-style: none;
   }
 
   .faq-item summary .faq-icon {
     flex: none;
-    width: 2rem;
-    height: 2rem;
+    width: 2.25rem;
+    height: 2.25rem;
     border-radius: 999px;
     display: grid;
     place-items: center;
-    background: var(--color-mist);
-    color: var(--color-turf);
+    background: #fff;
+    box-shadow: inset 0 0 0 1px var(--color-line);
+    color: var(--color-brand);
     transition:
-      transform 0.35s var(--ease-out-quint),
-      background-color 0.2s ease,
-      color 0.2s ease;
+      transform 0.5s var(--ease-soft),
+      background-color 0.25s ease,
+      color 0.25s ease,
+      box-shadow 0.25s ease;
   }
 
   .faq-item[open] summary .faq-icon {
     transform: rotate(45deg);
-    background: var(--color-turf);
+    background: var(--color-brand);
+    box-shadow: none;
     color: #fff;
   }
 
   .faq-item summary:hover .faq-icon {
-    background: var(--color-turf);
+    background: var(--color-brand);
+    box-shadow: none;
     color: #fff;
+  }
+
+  /* ---------- Services index ---------- */
+  .svc-row {
+    transition: opacity 0.35s ease;
+  }
+
+  @media (hover: hover) and (min-width: 1024px) {
+    .svc-list:hover .svc-row:not(:hover) {
+      opacity: 0.4;
+    }
+  }
+
+  /* ---------- Process story ---------- */
+  .story-stage {
+    display: none;
+  }
+
+  /* ---------- Horizontal work rail ---------- */
+  .rail-track {
+    --edge: max(var(--spacing-gutter), calc((100% - 84rem) / 2 + var(--spacing-gutter)));
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(0.9rem, 1.8vw, 1.75rem);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-inline: var(--edge);
+    scroll-padding-inline: var(--edge);
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+  }
+
+  .rail-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .rail-track > * {
+    flex: none;
+    scroll-snap-align: start;
+  }
+
+  /* The progress line only means something while the rail is pinned. */
+  .rail-progress {
+    display: none;
+  }
+
+  /* ---------- Grass edge (footer and closing bands) ---------- */
+  .grass {
+    position: absolute;
+    inset-inline: 0;
+    bottom: calc(100% - 1px);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 3.5rem;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .grass > span {
+    flex: none;
+    width: var(--w, 12px);
+    height: var(--h, 60%);
+    background: currentColor;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    transform-origin: 50% 100%;
+    transform: rotate(var(--r, 0deg));
   }
 }
 
 /* ------------------------------------------------------------------
  * Motion
- * Text is always in the HTML. These rules only set starting positions
- * (opacity / transform / clip-path) and only when motion is welcome.
- * `html.anim` is added by a tiny inline script and removed again if the
- * animation code fails to load, so content can never stay hidden.
+ *
+ * All text is in the server HTML. These rules only set starting positions, and only when
+ * motion is welcome. A tiny inline script (see components/motion/boot.ts) adds `html.anim`
+ * before first paint and takes it away again if the animation code never arrives, so content
+ * can never stay hidden. Everything is animated with transform and opacity; clip-path is the
+ * one exception, used for the image wipes and the before/after slider.
  * ------------------------------------------------------------------ */
 
 @media (prefers-reduced-motion: no-preference) {
-  /* Hero entrance: pure CSS, so it never waits for JavaScript. */
-  @keyframes word-in {
-    from {
-      opacity: 0;
-      transform: translate3d(0, 0.55em, 0) rotate(1.5deg);
-    }
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
-
-  @keyframes rise-in {
-    from {
-      opacity: 0;
-      transform: translate3d(0, 18px, 0);
-    }
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
-
-  @keyframes stripes-in {
-    from {
-      transform: scaleX(0);
-    }
-    to {
-      transform: scaleX(1);
-    }
-  }
-
   @keyframes settle {
     from {
-      transform: scale(1.09);
+      transform: scale(1.1);
     }
     to {
       transform: scale(1);
     }
   }
 
-  .hero-word {
-    display: inline-block;
-    animation: word-in 0.75s var(--ease-out-quint) both;
-    animation-delay: calc(var(--i, 0) * 60ms + 60ms);
+  @keyframes menu-in {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -10px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
   }
 
-  .hero-rise {
-    animation: rise-in 0.8s var(--ease-out-quint) both;
-    animation-delay: calc(var(--i, 0) * 90ms + 420ms);
+  .menu-in {
+    animation: menu-in 0.5s var(--ease-soft) both;
   }
 
-  .hero-stripes {
-    transform-origin: left center;
-    animation: stripes-in 1.1s var(--ease-out-quint) both;
-    animation-delay: 0.25s;
+  /* The hero photo never waits for JavaScript: it is the largest paint on the page. */
+  .settle {
+    animation: settle 1.9s var(--ease-soft) both;
   }
 
-  .hero-settle {
-    animation: settle 1.6s var(--ease-out-quint) both;
+  /* Page-load sequence (driven by GSAP + SplitText). */
+  html.anim [data-hero-title]:not(.is-in),
+  html.anim [data-split] {
+    opacity: 0;
   }
 
-  /* Scroll reveals (driven by GSAP once it has loaded). */
-  html.anim [data-reveal] {
+  html.anim [data-hero]:not(.is-in) {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0);
+  }
+
+  /* The runtime is late (slow connection): show the hero without waiting for it. */
+  html.anim-late [data-hero-title],
+  html.anim-late [data-hero] {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 0.7s ease,
+      transform 0.9s var(--ease-soft);
+  }
+
+  /* Scroll reveals. `is-in` is added once an element has arrived, which hands it back to normal CSS. */
+  html.anim [data-reveal]:not(.is-in, [data-reveal="clip"]) {
     opacity: 0;
     transform: translate3d(0, 28px, 0);
     will-change: opacity, transform;
   }
 
   html.anim [data-reveal="clip"] {
-    opacity: 1;
-    transform: none;
-    clip-path: inset(0 0 100% 0);
+    clip-path: inset(100% 0 0 0);
     will-change: clip-path;
   }
 
-  html.anim [data-reveal="clip"] img {
-    transform: scale(1.12);
+  html.anim [data-reveal="clip"] [data-reveal-inner] {
+    transform: scale(1.14);
+  }
+
+  /* Things that grow: the process stem, its leaves, the grass edge. */
+  html.anim [data-stem] {
+    transform: scaleY(0);
+  }
+
+  html.anim [data-leaf] {
+    transform: scale(0) rotate(-40deg);
+  }
+
+  html.anim [data-grow] > span {
+    transform: rotate(var(--r, 0deg)) scaleY(0);
+  }
+
+  /* Quote whose words light up as it is scrolled through. */
+  html.anim [data-words] [data-word] {
+    opacity: 0.16;
+  }
+
+  /* SplitText line masks: room for descenders, which a tight leading would clip. */
+  .line-mask {
+    padding-bottom: 0.14em;
+    margin-bottom: -0.14em;
+  }
+}
+
+/*
+ * Pinned scenes. The "pin" is plain CSS (position: sticky inside a tall track), so the
+ * layout is stable from the first paint and nothing jumps when the animation code arrives.
+ * GSAP only scrubs transforms inside. Phones, short windows and reduced motion keep the
+ * normal stacked layout.
+ */
+@media (min-width: 1024px) and (min-height: 680px) and (prefers-reduced-motion: no-preference) {
+  html.anim .story {
+    height: calc(100vh + var(--story-n, 4) * 62vh);
+    padding-block: 0;
+  }
+
+  html.anim .story-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    /* Clear of the fixed header. */
+    padding-top: 4.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  html.anim .story [data-story-step]:not(:first-of-type) [data-story-copy] {
+    opacity: 0.32;
+  }
+
+  /* Wide screens show the photos stacked beside the steps; otherwise each step carries its own. */
+  html.anim .story .story-stage {
+    display: block;
+  }
+
+  html.anim .story .story-inline {
+    display: none;
+  }
+
+  html.anim .story [data-story-media]:not(:first-child) {
+    clip-path: inset(100% 0 0 0);
+  }
+
+  html.anim .rail {
+    height: calc(100vh + var(--rail-n, 8) * 21rem);
+    padding-block: 0;
+  }
+
+  html.anim .rail-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding-top: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  html.anim .rail .rail-progress {
+    display: block;
+  }
+
+  html.anim .rail-track {
+    overflow: visible;
+    scroll-snap-type: none;
+    padding-bottom: 0;
+    will-change: transform;
   }
 }
 
@@ -457,47 +757,4 @@ html.lenis body {
 
 .lenis.lenis-stopped {
   overflow: hidden;
-}
-
-/* Horizontal services rail: native swipe by default, pinned scroll on desktop when GSAP takes over. */
-.rail {
-  display: flex;
-  gap: 1.25rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  /* Line the first card up with the page container on wide screens. */
-  padding-inline: max(clamp(1.25rem, 4vw, 2.5rem), calc((100vw - 78rem) / 2 + 2.5rem));
-  /* Without this, snapping scrolls the left padding out of view. */
-  scroll-padding-inline: max(clamp(1.25rem, 4vw, 2.5rem), calc((100vw - 78rem) / 2 + 2.5rem));
-  padding-bottom: 1rem;
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-turf) transparent;
-}
-
-.rail > * {
-  scroll-snap-align: start;
-  flex: none;
-}
-
-/*
- * On phones the rail sits a couple of screens down. Skipping its rendering until it is
- * near the viewport keeps its eight photos from loading alongside the hero image.
- * The intrinsic size is the rail's real height, so nothing jumps when it appears.
- */
-@media (max-width: 1023px) {
-  .rail {
-    content-visibility: auto;
-    contain-intrinsic-size: auto min(calc(97.5vw + 10rem), 37rem);
-  }
-}
-
-.rail.is-pinned {
-  overflow: visible;
-  scroll-snap-type: none;
-  padding-bottom: 0;
-  will-change: transform;
-}
-
-.tabular {
-  font-variant-numeric: tabular-nums;
 }

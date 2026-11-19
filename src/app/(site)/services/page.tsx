@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { business } from "@/lib/business";
 import { pageMetadata } from "@/lib/seo";
 import { services } from "@/lib/services";
-import { CtaBand } from "@/components/Cta";
-import { PageHero } from "@/components/PageHero";
-import { ServiceCard } from "@/components/ServiceCard";
+import { CtaBand } from "@/components/sections/CtaBand";
+import { PageHero } from "@/components/sections/PageHero";
+import { ServiceCard } from "@/components/ui/ServiceCard";
 
 export const metadata: Metadata = pageMetadata({
   title: "Landscaping Services in Marietta, GA | Speedy Landscaping",
